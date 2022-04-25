@@ -28,3 +28,7 @@ A lower bound can be found by removing a vertex, then finding a minimum spanning
 
 ### Upper Bound
 An upper bound can be found using the ‘Nearest Neighbour’ algorithm: Start at a particular vertex, and travel to the nearest unused vertex. Continue until all vertices are included, then return to the start vertex. This will always produce a valid Hamiltonian cycle, and therefore must be at least as long as the minimum cycle. Hence, it is an upper bound. By choosing different starting vertices, a number of different upper bounds can be found. The lower the upper bound, the better, as it gives us more information.
+
+## Attendance
+
+2022-04-25: All
