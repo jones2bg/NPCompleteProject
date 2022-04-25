@@ -9,8 +9,10 @@ Appxorimation Code: Blake
 ## Input
 Normal adjancency list with weights.
 
+```
 n vertices
 weight vertex connected vertices
+```
 
 We will write a program to generate a text file in this format, it will take the number of vertices and a range of values that will be randomly selected from to assign a weight to each vertex.
 
