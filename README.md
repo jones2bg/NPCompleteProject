@@ -1,10 +1,16 @@
 # Travelling Salesman Problem
 
+## Problem definition
+Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?
+
+Input: a weighted graph
+Output: the chosen path and its cost
+
 ## Problem Assignments
-Problem Presentation: Ryan
-Exact Solution Code: Quade
-Approximation Presentation: Miguel
-Appxorimation Code: Blake
+Problem Presentation: Ryan  
+Exact Solution Code: Quade  
+Approximation Presentation: Miguel  
+Appxorimation Code: Blake  
 
 ## Input
 Normal adjancency list with weights.
