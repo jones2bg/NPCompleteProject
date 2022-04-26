@@ -16,7 +16,7 @@ def main():
         graph[edge[0]].add(edge[1])
         weights[(edge[0], edge[1])] = edge[2]
 
-    print(graph)
+    # print(graph)
     print(weights)
 
 if __name__ == '__main__':
