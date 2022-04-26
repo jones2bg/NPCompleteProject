@@ -13,7 +13,6 @@ def generate_graph(vertices):
 
     # loop through each vertex and connect it to every other vertex.
     for v1 in range(vertices):
-        # initialize the adjacency list
         for v2 in range(vertices):
             # ensure the node cannot be connected to itself
             if v1 != v2:
@@ -28,7 +27,7 @@ def generate_graph(vertices):
     return edges
 
 def main():
-    n = 3
+    n = 10
     weights = generate_graph(n)
 
     print(n, len(weights))
