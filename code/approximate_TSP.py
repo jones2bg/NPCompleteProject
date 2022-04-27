@@ -6,22 +6,38 @@
 
 import random
 import time
+import sys
 
 
-def approximate(start_node, runtime, graph):
+def approximate(start_node, runtime, graph, nodes):
     # hold our current start time.
     start_time = time.time()
 
     # generate a random path from the nodes
-    path = list(graph.keys())
-    path.remove(start_node)
+    path = list(nodes[start_node])
+    no_start_end_path = list(nodes[start_node])
+    # shuffle the nodes
     random.shuffle(path)
+    # add the start to the front and end of the path.
     path.insert(0, start_node)
     path.append(start_node)
 
+    curr_min = sys.maxsize
+    
     # run our approximation for (runtime) seconds
     while time.time() < start_time + runtime:
-        pass
+        cost = 0
+        for i in range(len(path) - 1):
+            cost += graph[(path[i], path[i+1])]
+        if cost < curr_min:
+            curr_min = cost
+            print(curr_min)
+        
+        choices = random.sample(no_start_end_path, 2)
+        print(choices)
+            
+            
+            
         
 
 
@@ -35,14 +51,16 @@ def main():
     edges = [[int(x) for x in input().split(' ')] for _ in range(0, e)]
 
     graph = dict()
-
+    nodes = dict()
+    
     for i in range(v):
-        graph[i] = []
+        nodes[i] = set()
 
     for edge in edges:
-         graph[edge[0]].append((edge[1], edge[2]))
-   
-    approximate(start_node, runtime, graph)
+        nodes[edge[0]].add(edge[1])
+        graph[(edge[0], edge[1])] = edge[2]
+    
+    approximate(start_node, runtime, graph, nodes)
 
 if __name__ == "__main__":
     main()
