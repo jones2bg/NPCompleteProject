@@ -18,6 +18,7 @@ A list of edges with their weights.
 ```
 n vertices, n edges
 vertex vertex weight
+start node
 ```
 
 We will write a program to generate a text file in this format, it will take the number of vertices and a range of values that will be randomly selected from to assign a weight to each vertex.
