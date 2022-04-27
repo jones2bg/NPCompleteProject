@@ -7,30 +7,42 @@
 import random
 import time
 
-def approximate(start_node, runtime, graph, edges):
-    print(start_node)
-    print(runtime)
-    print(graph)
-    print(edges)
 
+def approximate(start_node, runtime, graph):
+    # hold our current start time.
+    start_time = time.time()
+
+    # generate a random path from the nodes
+    path = list(graph.keys())
+    path.remove(start_node)
+    random.shuffle(path)
+    path.insert(0, start_node)
+    path.append(start_node)
+
+    # run our approximation for (runtime) seconds
+    while time.time() < start_time + runtime:
+        pass
+        
+
+
+# prompt for input and approximate the minima.
 def main():
-    timeout = int(input())
-    start_node = int(input())
+    start_node = int(input("start node (int): "))
+    runtime = int(input("runtime (seconds): "))    
+    print("input graph: ")
 
     v, e = [int(x) for x in input().split(' ')[:2]]
     edges = [[int(x) for x in input().split(' ')] for _ in range(0, e)]
 
     graph = dict()
-    weights = dict()
 
-    for i in range(0, v):
-        graph[i] = set()
+    for i in range(v):
+        graph[i] = []
 
     for edge in edges:
-        graph[edge[0]].add(edge[1])
-        weights[(edge[0], edge[1])] = edge[2]
-
-    approximate(timeout, 0, graph, edges)
+         graph[edge[0]].append((edge[1], edge[2]))
+   
+    approximate(start_node, runtime, graph)
 
 if __name__ == "__main__":
     main()
