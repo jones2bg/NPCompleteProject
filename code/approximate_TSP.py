@@ -31,7 +31,10 @@ def approximate(start_node, runtime, graph, nodes):
             cost += graph[(path[i], path[i+1])]
         if cost < curr_min:
             curr_min = cost
-            print(curr_min)
+            print("New Minimum Cost Path:")
+            print(path)
+            print("New Minimum Cost:", curr_min)
+            print()
         
         # sample two random items in the list.
         choices = random.sample(no_start_end_path, 2)
