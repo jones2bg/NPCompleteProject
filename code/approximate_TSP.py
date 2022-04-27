@@ -33,13 +33,13 @@ def approximate(start_node, runtime, graph, nodes):
             curr_min = cost
             print(curr_min)
         
+        # sample two random items in the list.
         choices = random.sample(no_start_end_path, 2)
-        print(choices)
-            
-            
-            
+        index_first_ele = path.index(choices[0])
+        index_second_ele = path.index(choices[1])
         
-
+        # create the new path
+        path[index_first_ele], path[index_second_ele] = path[index_second_ele], path[index_first_ele]
 
 # prompt for input and approximate the minima.
 def main():
