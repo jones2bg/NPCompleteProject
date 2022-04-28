@@ -4,8 +4,9 @@ mkdir -p small
 mkdir -p medium
 mkdir -p large
 
-sizes=(3 5 10 15 25)
+sizes=(3 5 10 12 13 14)
 weight_limits=(100 1000 5000)
+
 for e in "${sizes[@]}"
 do
   printf "$e\n${weight_limits[0]}" | ./generate_graph.py > small/"$e"_node.txt
