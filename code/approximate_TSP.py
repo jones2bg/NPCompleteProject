@@ -46,12 +46,12 @@ def approximate(start_node, runtime, graph, nodes):
 
 # prompt for input and approximate the minima.
 def main():
-    start_node = int(input("start node (int): "))
     runtime = int(input("runtime (seconds): "))    
     print("input graph: ")
 
     v, e = [int(x) for x in input().split(' ')[:2]]
     edges = [[int(x) for x in input().split(' ')] for _ in range(0, e)]
+    start_node = int(input())
 
     graph = dict()
     nodes = dict()
