@@ -19,7 +19,7 @@ for item in ${medium[@]}
 do
   printf "medium/$item\n"
   printf "time/$time\n"
-  time ./approximate_TSP.py $time $interval < medium/$item
+  ./approximate_TSP.py $time $interval < medium/$item
   printf "\n"
 done
 
@@ -27,6 +27,6 @@ for item in ${large[@]}
 do
   printf "large/$item\n"
   printf "time/$time\n"
-  time ./approximate_TSP.py $time $interval < large/$item
+  ./approximate_TSP.py $time $interval < large/$item
   printf "\n"
 done
