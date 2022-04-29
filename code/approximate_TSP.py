@@ -33,11 +33,6 @@ def approximate(start_node, runtime, graph, nodes):
             cost += graph[(path[i], path[i+1])]
         if cost < curr_min:
             curr_min = cost
-            print("New Minimum Cost Path:")
-            print(path)
-            print("New Minimum Cost:", curr_min)
-            print("Cumulative Amount of Paths Evaluated:", counter)
-            print("")
         
         # sample two random items in the list.
         choices = random.sample(no_start_end_path, 2)
@@ -47,11 +42,15 @@ def approximate(start_node, runtime, graph, nodes):
         # create the new path
         path[index_first_ele], path[index_second_ele] = path[index_second_ele], path[index_first_ele]
         counter += 1
+        
+    print("Minimum Cost Path:")
+    print(path)
+    print("Minimum Cost:", curr_min)
+    print("Cumulative Amount of Paths Evaluated:", counter)
 
 # prompt for input and approximate the minima.
 def main():
-    runtime = int(input("runtime (milliseconds): "))    
-    print("input graph: ")
+    runtime = int(sys.argv[1])
 
     v, e = [int(x) for x in input().split(' ')[:2]]
     edges = [[int(x) for x in input().split(' ')] for _ in range(0, e)]

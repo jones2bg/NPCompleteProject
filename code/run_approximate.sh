@@ -22,6 +22,7 @@ for time in ${times_[@]}
   for item in ${medium[@]}
   do
     printf "medium/$item\n"
+    printf "time/$time\n"
     time ./approximate_TSP.py $time < medium/$item
     printf "\n"
   done
@@ -32,6 +33,7 @@ for time in ${times_[@]}
   for item in ${large[@]}
   do
     printf "large/$item\n"
+    printf "time/$time\n"
     time ./approximate_TSP.py $time < large/$item
     printf "\n"
   done
