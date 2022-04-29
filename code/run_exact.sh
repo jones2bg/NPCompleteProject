@@ -4,6 +4,8 @@ small=($(ls small))
 medium=($(ls medium))
 large=($(ls large))
 
+cpus=$(nproc)
+
 for item in ${small[@]}
 do
   printf "small/$item\n"

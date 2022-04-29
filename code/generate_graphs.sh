@@ -4,7 +4,7 @@ mkdir -p small
 mkdir -p medium
 mkdir -p large
 
-sizes=(3 5 10 12 13 14)
+sizes=(3 4 5 6 7 8 9 10 11 12 13 14)
 weight_limits=(100 1000 5000)
 
 for e in "${sizes[@]}"
