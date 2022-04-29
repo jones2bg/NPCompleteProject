@@ -4,9 +4,7 @@ small=($(ls small))
 medium=($(ls medium))
 large=($(ls large))
 
-cpus=$(nproc)
-
-times_ = (1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000)
+times_=(1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000)
 
 for time in ${times_[@]}
   do
