@@ -6,6 +6,8 @@
 
 import sys
 import itertools
+import datetime
+import time
 
 def tsp(graph, weights, start):
     # Create a set of all the vertices in the graph.
@@ -38,8 +40,7 @@ def tsp(graph, weights, start):
             min_traversal.insert(0, start)
             min_traversal.append(start)
 
-    print(min_cost)
-    print(min_traversal)
+    return min_cost, min_traversal
 
 def main():
     v, e = [int(x) for x in input().split(' ')[:2]]
@@ -56,7 +57,14 @@ def main():
         graph[edge[0]].add(edge[1])
         weights[(edge[0], edge[1])] = edge[2]
 
-    tsp(graph, weights, start)
+    start_time = time.time()
+    min_cost, min_traversal = tsp(graph, weights, start)
+    end_time = time.time()
+
+    print(min_cost)
+    print(min_traversal)
+
+    print(datetime.timedelta(seconds=end_time - start_time))
 
 if __name__ == '__main__':
     main()
