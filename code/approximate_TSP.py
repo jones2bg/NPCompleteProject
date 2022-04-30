@@ -23,6 +23,7 @@ def approximate(start_node, runtime, interval, graph, nodes):
     path.insert(0, start_node)
     path.append(start_node)
 
+    min_path = []
     curr_min = sys.maxsize
     # Amount of paths taken.
     counter = 1
@@ -35,7 +36,7 @@ def approximate(start_node, runtime, interval, graph, nodes):
         if (time.time() > next_interval):
             print("Runtime:", current_interval)
             print("Minimum Cost Path:")
-            print(path)
+            print(min_path)
             print("Minimum Cost:", curr_min)
             print("Paths evaluated:", counter)
             print()
@@ -47,6 +48,7 @@ def approximate(start_node, runtime, interval, graph, nodes):
             cost += graph[(path[i], path[i+1])]
         if cost < curr_min:
             curr_min = cost
+            min_path = path.copy()
 
         # sample two random items in the list.
         choices = random.sample(no_start_end_path, 2)
@@ -59,7 +61,7 @@ def approximate(start_node, runtime, interval, graph, nodes):
 
     print("Runtime:", current_interval)
     print("Minimum Cost Path:")
-    print(path)
+    print(min_path)
     print("Minimum Cost:", curr_min)
     print("Paths evaluated:", counter)
 
