@@ -6,15 +6,15 @@ large=($(ls ../../approximate_solution/test_cases/large))
 
 for item in ${small[@]}
 do
-    ./lower_bound.py < ../../approximate_solution/test_cases/small/$item
+    python3 lower_bound.py < ../../approximate_solution/test_cases/small/$item
 done
 
 for item in ${medium[@]}
 do
-    ./lower_bound.py < ../../approximate_solution/test_cases/medium/$item
+    python3 lower_bound.py < ../../approximate_solution/test_cases/medium/$item
 done
 
 for item in ${small[@]}
 do
-    ./lower_bound.py < ../../approximate_solution/test_cases/large/$item
+    python3 lower_bound.py < ../../approximate_solution/test_cases/large/$item
 done
