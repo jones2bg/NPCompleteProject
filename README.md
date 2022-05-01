@@ -10,7 +10,7 @@ Output: the chosen path and its cost
 Problem Presentation: Ryan  
 Exact Solution Code: Quade  
 Approximation Presentation: Miguel  
-Appxorimation Code: Blake  
+Approximation Code: Blake  
 
 ## Input
 A list of edges with their weights.
