@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Author(s): Blake Jones
-# Description: This script creates an approximation of the TSP problem.
+# Description: This script creates an approximation of the TSP problem using a random approach.
 # Date: 4/26/22
 
 import random
