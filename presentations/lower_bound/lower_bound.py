@@ -17,15 +17,17 @@ def main():
     for edge in edges:
         graph[edge[0]].add(edge[1])
         weights[(edge[0], edge[1])] = edge[2]
+
+    mst = MST(graph.keys(),weights)
     min_cost = 0
-    graph.pop(0)
     visited = []
-    for u in graph.keys():
-        for v in graph[u]:
+    for u in mst.keys():
+        for v in mst[u]:
             if (not (u,v) in visited or (v,u) in visited) and (u,v) in weights.keys():
                 min_cost += weights[(u,v)]
                 visited.append((u,v))
     
+    print(mst)
     print(min_cost)
 
 #(V-1) * V /2 for a complete graph
@@ -58,6 +60,7 @@ def MST(V,E): #num of vert and all edges
     while count > 1:
         AddAllSafeEdges(E,F,count,count_and_label(F)[1])
         count = count_and_label(F)[0]
+    
     return F
 
     
