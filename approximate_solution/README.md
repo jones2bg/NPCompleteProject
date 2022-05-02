@@ -8,7 +8,7 @@ Run run_test_cases.sh with no arguments to run all provided test cases.
 ```
 
 ## Running Individually
-Run approximate_TSP.py and provide the time to run as well as the interval at which to print out the approximation as arguments, both as milisecond values, and provide an input graph and selected starting node on stdin. The two arguments, in order, correspond to the time to run the tests at, and the interval increase between steps.
+Run approximate_TSP.py and provide the time to run as well as the interval at which to print out the approximation as arguments, both as milisecond values, and provide an input graph and selected starting node on stdin. The two arguments, in order, correspond to the runtime of the approximation, and the interval increase between each iteration as seen below.
 
 ```
 ./approximate_TSP.py 3000 500 < test_cases/small/3_node.txt
